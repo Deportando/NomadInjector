@@ -1,0 +1,107 @@
+﻿<Window x:Class="NomadInjector.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Injection Settings" Height="400" Width="450"
+        WindowStartupLocation="CenterOwner"
+        Background="White" 
+        Foreground="Black">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="AccentColor" Color="#00A300"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#CCCCCC"/>
+        <SolidColorBrush x:Key="ButtonBackground" Color="#EFEFEF"/>
+
+        <Style TargetType="GroupBox">
+            <Setter Property="Foreground" Value="{StaticResource AccentColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#DDDDDD"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Control}">
+            <Setter Property="Background" Value="#F8F8F8"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="24"/>
+            <Style.Triggers>
+                <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                    <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="AccentToolButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#007F33"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Injection Method" Grid.Row="0" Margin="0,0,0,15">
+            <StackPanel Margin="10">
+                <ComboBox x:Name="CmbInjectionMethod" SelectedIndex="0" Width="200" HorizontalAlignment="Left"
+                          SelectionChanged="CmbInjectionMethod_SelectionChanged">
+                    <ComboBoxItem Content="Standard (LoadLibraryA)"/>
+                    <ComboBoxItem Content="Manual Map (Advanced)"/>
+                    <ComboBoxItem Content="Thread Hijacking"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Stealth Options" Grid.Row="1" Margin="0,0,0,15">
+            <StackPanel Margin="10">
+                <CheckBox x:Name="ChkEraseHeaders" Content="Erase PE Headers" Foreground="Black"/>
+                <CheckBox x:Name="ChkHideModule" Content="Unlink from Module List (Hide)" Foreground="Black"/>
+                <CheckBox x:Name="ChkScrambleDisk" Content="Scramble DLL on Disk After Inject" Foreground="Black"/>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Content="Thread Timeout (ms):" Foreground="Black" VerticalAlignment="Center"/>
+                    <TextBox x:Name="TxtTimeout" Text="5000" Height="20" Width="80"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Tools and Diagnostics" Grid.Row="2" Margin="0,0,0,15">
+            <Button x:Name="BtnOpenModuleViewer" 
+                    Content="Open Module Viewer" 
+                    Width="200"
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource AccentToolButton}"
+                    Click="BtnOpenModuleViewer_Click"/>
+        </GroupBox>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" x:Name="BtnOk" IsDefault="True" Width="80" Margin="0,0,10,0" Click="BtnOk_Click"/>
+            <Button Content="Cancel" x:Name="BtnCancel" IsCancel="True" Width="80" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

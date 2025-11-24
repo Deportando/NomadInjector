@@ -1,0 +1,35 @@
+﻿<Window x:Class="NomadInjector.CreditsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About Nomad Injector" Height="300" Width="400"
+        WindowStartupLocation="CenterOwner"
+        Background="White" 
+        Foreground="Black">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="AccentColor" Color="#00A300"/>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="20">
+        <TextBlock FontSize="18" FontWeight="Bold" Foreground="{StaticResource AccentColor}" 
+                   Text="Nomad Injector"/>
+
+        <Separator Margin="0,5,0,10"/>
+
+        <TextBlock FontWeight="SemiBold" Text="Dev:"/>
+        <TextBlock Text="Uni" Margin="0,0,0,10"/>
+
+        <TextBlock FontWeight="SemiBold" Text="Links:"/>
+        <TextBlock Text="https://github.com/Deportando/NomadInjector"
+                   TextDecorations="Underline" Foreground="Blue" Cursor="Hand"
+                   MouseDown="Hyperlink_Click" Margin="0,0,0,10"/>
+
+        <TextBlock FontWeight="SemiBold" Text="Special Thanks:"/>
+        <TextBlock Text="Thank you for using this tool! This injector is provided as open-source code for educational and archival purposes."/>
+    </StackPanel>
+</Window>
