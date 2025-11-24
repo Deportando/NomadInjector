@@ -61,6 +61,11 @@ If you find this tool useful and would like to support continued development, an
 
 ***
 
+## Virustotal
+
+[> VT Link <](https://www.virustotal.com/gui/file/c3b6866e64e7b9f27d37b061c90efd81cce53f57e1ada6b655e0ed6e111a9289?nocache=1)
+***
+
 ## License Information ⚖️
 
 This project is licensed under the **MIT License**.
