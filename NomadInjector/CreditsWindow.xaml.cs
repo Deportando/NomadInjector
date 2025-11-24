@@ -11,10 +11,8 @@ namespace NomadInjector
             InitializeComponent();
         }
 
-        // Method to handle the hyperlink click
         private void Hyperlink_Click(object sender, MouseButtonEventArgs e)
         {
-            // Opens the specified URL in the default browser
             Process.Start(new ProcessStartInfo("https://github.com/Deportando/NomadInjector") { UseShellExecute = true });
         }
     }
