@@ -11,6 +11,12 @@ C# WPF LoadLibraryA Injector and Process Diagnostic Tool.
 * **Settings Persistence:** Saves injection settings for future use.
 * **Credits:** Includes a credits window acknowledging contributors and resources.
 
+![Nomad Injector UI](https://files.catbox.moe/ibef1k.png)
+
+![ ](https://files.catbox.moe/dkicr4.png)
+
+![ ](https://files.catbox.moe/l9mp40.png)
+
 ***
 
 ## Prerequisites & Dependencies 🖥️
@@ -45,9 +51,13 @@ C# WPF LoadLibraryA Injector and Process Diagnostic Tool.
 If you find this tool useful and would like to support continued development, any contributions are greatly appreciated!
 
 | Cryptocurrency | Address |
+
 | **Bitcoin (BTC)** | `bc1qmmuwdfpswf44qhz7jyd0vnshp0q2ya3dyep4g0` |
+
 | **Ethereum (ETH)** | `0x4B4b81277c061F861942d3355cAD8e671F999832` |
+
 | **Tether (USDT - ERC20)** | `0x4B4b81277c061F861942d3355cAD8e671F999832` |
+
 
 ***
 
